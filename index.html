@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Nalina Thennakoon | Advanced Portfolio</title>
+  <title>Nalina Thennakoon | Software Developer Portfolio</title>
 
-  <meta name="description" content="Portfolio website of Nalina Thennakoon, Computer Systems Engineering student and Software Engineering graduate.">
+  <meta name="description" content="Professional portfolio website of Nalina Thennakoon, featuring web development, AI, deep learning, data analytics, software engineering projects and upcoming work.">
   <meta name="keywords" content="Nalina Thennakoon, Portfolio, Software Engineering, Computer Systems Engineering, Web Developer">
   <meta name="author" content="Nalina Thennakoon">
 
@@ -688,6 +688,178 @@
       50% { transform: translateY(-14px); }
     }
 
+
+    .brand-logo {
+      overflow: hidden;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 11px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-availability {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      margin: -10px 0 24px;
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.65);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.65); }
+      70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    .tech-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tech-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.45);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    body.dark .tech-strip span {
+      background: rgba(15, 23, 42, 0.55);
+    }
+
+    .profile-img {
+      filter: saturate(1.03) contrast(1.02);
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .status-completed { color: #15803d; background: rgba(34, 197, 94, 0.12); }
+    .status-progress { color: #b45309; background: rgba(245, 158, 11, 0.14); }
+    .status-upcoming { color: var(--primary); background: rgba(37, 99, 235, 0.11); }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .roadmap-card {
+      padding: 24px;
+      transition: 0.3s;
+    }
+
+    .roadmap-card:hover { transform: translateY(-8px); }
+
+    .roadmap-card h3 {
+      color: var(--primary-dark);
+      margin: 12px 0 8px;
+    }
+
+    .roadmap-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .roadmap-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .roadmap-meta span {
+      font-size: 12px;
+      color: var(--primary-dark);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid var(--border);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .github-note {
+      margin-top: 38px;
+      padding: 26px;
+      text-align: center;
+    }
+
+    .github-note h3 {
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .github-note p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .quick-link {
+      padding: 20px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(37, 99, 235, 0.07);
+      transition: 0.25s;
+    }
+
+    .quick-link:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .quick-link b {
+      color: var(--primary-dark);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .quick-link span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .about-grid,
@@ -699,7 +871,9 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .projects-grid {
+      .projects-grid,
+      .roadmap-grid,
+      .quick-links {
         grid-template-columns: 1fr;
       }
 
@@ -765,7 +939,7 @@
 
   <nav class="navbar">
     <a href="#home" class="brand">
-      <span class="brand-logo">N</span>
+      <span class="brand-logo"><img src="avatar.jpg" alt="Nalina Thennakoon"></span>
       <span>Nalina Portfolio</span>
     </a>
 
@@ -774,6 +948,7 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#upcoming">Upcoming</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
@@ -798,6 +973,19 @@
             building clean websites, practical applications, AI projects, and user-friendly digital solutions.
           </p>
 
+          <div class="hero-availability">
+            <span class="pulse-dot"></span>
+            Open to internship, junior developer and freelance web project opportunities
+          </div>
+
+          <div class="tech-strip">
+            <span>🌐 Web Development</span>
+            <span>🤖 AI & Data</span>
+            <span>🧠 Deep Learning</span>
+            <span>💻 C# / .NET</span>
+            <span>📱 Android</span>
+          </div>
+
           <div class="btn-row">
             <a href="#projects" class="btn btn-primary">View My Work →</a>
             <a href="#contact" class="btn btn-secondary">Contact Me</a>
@@ -806,8 +994,8 @@
 
           <div class="stats">
             <div class="stat">
-              <h3>4+</h3>
-              <span>Main Project Areas</span>
+              <h3>7+</h3>
+              <span>Projects & Roadmap Items</span>
             </div>
             <div class="stat">
               <h3>8+</h3>
@@ -823,10 +1011,7 @@
         <div class="hero-card-wrap reveal">
           <div class="hero-card">
             <div class="profile-frame">
-              <!-- To add your own image, place your photo in the same folder and replace this div with:
-              <img class="profile-img" src="myphoto.jpg" alt="Nalina Thennakoon">
-              -->
-              <div class="profile-placeholder">NT</div>
+              <img class="profile-img" src="profile.jpg" alt="Nalina Thennakoon profile photo">
             </div>
 
             <div class="mini-card">
@@ -984,8 +1169,8 @@
       <div class="container">
         <div class="section-head reveal">
           <span>Projects</span>
-          <h2>Selected work</h2>
-          <p>Some academic and personal projects that show my development and problem-solving skills.</p>
+          <h2>Featured academic and development work</h2>
+          <p>Selected projects that demonstrate practical skills in web development, AI, deep learning, software engineering and problem solving.</p>
         </div>
 
         <div class="projects-grid">
@@ -995,7 +1180,7 @@
                 <div class="icon">🏦</div>
                 <h3>Loan Approval Prediction using XAI</h3>
               </div>
-              <span class="project-tag">AI Project</span>
+              <span class="status-badge status-completed">✅ Completed</span>
             </div>
             <p>
               Developed a machine learning solution to predict loan approval decisions and improve transparency
@@ -1006,23 +1191,24 @@
             </div>
             <div class="project-actions">
               <a class="small-btn" href="https://github.com/Nalina-UT/xai-loan-approval-project" target="_blank">GitHub</a>
-              <a class="small-btn" href="https://github.com/Nalina-UT/xai-loan-approval-project" target="_blank">View Details</a>            </div>
+              <a class="small-btn" href="https://github.com/Nalina-UT/xai-loan-approval-project" target="_blank">View Details</a>
+            </div>
           </div>
 
           <div class="project-card glass reveal">
             <div class="project-top">
               <div>
                 <div class="icon">🧠</div>
-                <h3>Deep Learning Image Classification</h3>
+                <h3>Deep Learning: MNIST and KITTI</h3>
               </div>
-              <span class="project-tag">Deep Learning</span>
+              <span class="status-badge status-completed">✅ Completed</span>
             </div>
             <p>
-              Created CNN models for image classification and compared model performance using accuracy,
-              evaluation metrics and visual result analysis.
+              Created CNN models for MNIST image classification and worked on a KITTI object detection pipeline
+              using deep learning and computer vision techniques.
             </p>
             <div class="tools">
-              <span>Python</span><span>CNN</span><span>TensorFlow</span><span>Evaluation</span>
+              <span>Python</span><span>CNN</span><span>Faster R-CNN</span><span>Computer Vision</span>
             </div>
             <div class="project-actions">
               <a class="small-btn" href="https://github.com/Nalina-UT/deep-learning-mnist-kitti" target="_blank">GitHub</a>
@@ -1033,21 +1219,21 @@
           <div class="project-card glass reveal">
             <div class="project-top">
               <div>
-                <div class="icon">🎮</div>
-                <h3>Android Game Project</h3>
+                <div class="icon">💊</div>
+                <h3>C# Pharmacy Management System</h3>
               </div>
-              <span class="project-tag">Mobile App</span>
+              <span class="status-badge status-progress">🛠️ Improving</span>
             </div>
             <p>
-              Designed an Android game project with player movement, scoring system, simple game logic
-              and improved visual interface.
+              A C# based pharmacy management project focused on managing products, stock, customer details,
+              sales records and basic business operations.
             </p>
             <div class="tools">
-              <span>Kotlin</span><span>Android Studio</span><span>Game Logic</span><span>UI</span>
+              <span>C#</span><span>.NET</span><span>Database</span><span>Management System</span>
             </div>
             <div class="project-actions">
-              <a class="small-btn" href="#" onclick="alert('Add your GitHub project link here.'); return false;">GitHub</a>
-              <a class="small-btn" href="#" onclick="alert('Add your game demo link here.'); return false;">View Demo</a>
+              <a class="small-btn" href="https://github.com/Nalina-UT/C-sharp-Pharmacy-management" target="_blank">GitHub</a>
+              <a class="small-btn" href="https://github.com/Nalina-UT/C-sharp-Pharmacy-management" target="_blank">View Details</a>
             </div>
           </div>
 
@@ -1055,20 +1241,97 @@
             <div class="project-top">
               <div>
                 <div class="icon">🖥️</div>
-                <h3>Portfolio Website</h3>
+                <h3>Personal Portfolio Website</h3>
               </div>
-              <span class="project-tag">Web Design</span>
+              <span class="status-badge status-completed">✅ Live</span>
             </div>
             <p>
-              Built a responsive personal portfolio website to showcase education, skills, projects,
-              contact information and career goals.
+              Built and deployed a responsive personal portfolio website to showcase education, technical skills,
+              GitHub projects, contact information and career goals.
             </p>
             <div class="tools">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span>
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span>
             </div>
             <div class="project-actions">
-              <a class="small-btn" href="#" onclick="alert('Add your portfolio GitHub link here.'); return false;">GitHub</a>
-              <a class="small-btn" href="#home">Live Page</a>
+              <a class="small-btn" href="https://github.com/Nalina-UT/nalina-portfolio" target="_blank">GitHub</a>
+              <a class="small-btn" href="https://nalina-ut.github.io/nalina-portfolio/" target="_blank">Live Page</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="github-note glass reveal">
+          <h3>GitHub Project Portfolio</h3>
+          <p>
+            My GitHub profile contains academic and personal projects covering web development, artificial intelligence,
+            deep learning, computer vision and software system development.
+          </p>
+          <div class="project-actions" style="justify-content:center;">
+            <a class="small-btn" href="https://github.com/Nalina-UT" target="_blank">View GitHub Profile</a>
+          </div>
+
+          <div class="quick-links">
+            <a class="quick-link" href="https://github.com/Nalina-UT/xai-loan-approval-project" target="_blank">
+              <b>AI / XAI</b>
+              <span>Loan approval prediction with explainability</span>
+            </a>
+            <a class="quick-link" href="https://github.com/Nalina-UT/deep-learning-mnist-kitti" target="_blank">
+              <b>Deep Learning</b>
+              <span>MNIST classification and KITTI object detection</span>
+            </a>
+            <a class="quick-link" href="https://github.com/Nalina-UT/C-sharp-Pharmacy-management" target="_blank">
+              <b>C# System</b>
+              <span>Pharmacy management project</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="upcoming">
+      <div class="container">
+        <div class="section-head reveal">
+          <span>Upcoming Projects</span>
+          <h2>Project roadmap</h2>
+          <p>Future projects I am planning to build to improve my software development, AI and full-stack skills.</p>
+        </div>
+
+        <div class="roadmap-grid">
+          <div class="roadmap-card glass reveal">
+            <span class="status-badge status-upcoming">🚀 Upcoming</span>
+            <div class="icon">🛡️</div>
+            <h3>AI Cybersecurity Threat Detection</h3>
+            <p>
+              A future machine learning project to detect suspicious activity and classify potential cyber threats
+              using data analytics and AI techniques.
+            </p>
+            <div class="roadmap-meta">
+              <span>Python</span><span>Machine Learning</span><span>Cybersecurity</span>
+            </div>
+          </div>
+
+          <div class="roadmap-card glass reveal">
+            <span class="status-badge status-upcoming">🚀 Upcoming</span>
+            <div class="icon">🛒</div>
+            <h3>E-Commerce Web Application</h3>
+            <p>
+              A full-stack web application with product listing, customer accounts, shopping cart,
+              checkout workflow and admin product management.
+            </p>
+            <div class="roadmap-meta">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>MySQL</span>
+            </div>
+          </div>
+
+          <div class="roadmap-card glass reveal">
+            <span class="status-badge status-upcoming">🚀 Upcoming</span>
+            <div class="icon">📱</div>
+            <h3>Advanced Android Game Upgrade</h3>
+            <p>
+              An improved Android game project with better visuals, smoother gameplay, scoring logic,
+              sound effects and a more polished user experience.
+            </p>
+            <div class="roadmap-meta">
+              <span>Kotlin</span><span>Android Studio</span><span>Game UI</span>
             </div>
           </div>
         </div>
@@ -1133,7 +1396,7 @@
               <div class="icon">💼</div>
               <div>
                 <b>LinkedIn</b>
-                <p>Add your LinkedIn profile link here</p>
+                <p><a href="#" onclick="alert('Add your LinkedIn profile URL here.'); return false;">Add LinkedIn Profile</a></p>
               </div>
             </div>
 
@@ -1141,7 +1404,7 @@
               <div class="icon">🐙</div>
               <div>
                 <b>GitHub</b>
-                <p>Add your GitHub profile link here</p>
+                <p><a href="https://github.com/Nalina-UT" target="_blank">github.com/Nalina-UT</a></p>
               </div>
             </div>
 
