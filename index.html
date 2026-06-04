@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Nalina Thennakoon | Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,8 +18,8 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: #f6efe6;
-      color: #4b382d;
+      background: #f5eadc;
+      color: #3e2b22;
       overflow-x: hidden;
     }
 
@@ -27,63 +28,67 @@
       color: inherit;
     }
 
-    .page-wrapper {
-      position: relative;
-      min-height: 100vh;
-      overflow: hidden;
-    }
-
-    .blob {
+    .background-shape {
       position: fixed;
       border-radius: 50%;
-      filter: blur(50px);
+      filter: blur(70px);
       opacity: 0.45;
-      z-index: -1;
-      animation: floatBlob 8s ease-in-out infinite alternate;
+      z-index: -5;
+      animation: shapeMove 8s ease-in-out infinite alternate;
     }
 
-    .blob-1 {
-      width: 280px;
-      height: 280px;
-      background: #d8b48c;
-      top: 5%;
-      left: -80px;
+    .shape-one {
+      width: 300px;
+      height: 300px;
+      background: #d2a679;
+      top: 8%;
+      left: -100px;
     }
 
-    .blob-2 {
-      width: 260px;
-      height: 260px;
-      background: #ead6b9;
-      bottom: 10%;
-      right: -60px;
+    .shape-two {
+      width: 350px;
+      height: 350px;
+      background: #e6c9a8;
+      right: -120px;
+      bottom: 8%;
       animation-delay: 2s;
     }
 
-    @keyframes floatBlob {
+    @keyframes shapeMove {
       from {
         transform: translateY(0) scale(1);
       }
       to {
-        transform: translateY(40px) scale(1.12);
+        transform: translateY(45px) scale(1.12);
       }
+    }
+
+    .scroll-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: #6f4d3c;
+      z-index: 9999;
     }
 
     nav {
       width: 92%;
       max-width: 1180px;
       margin: 20px auto;
-      padding: 16px 28px;
-      background: rgba(255, 252, 247, 0.78);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(118, 86, 65, 0.12);
+      padding: 15px 28px;
       border-radius: 50px;
+      background: rgba(255, 250, 242, 0.78);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 15px 40px rgba(80, 55, 38, 0.12);
+      border: 1px solid rgba(120, 80, 50, 0.13);
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       position: sticky;
       top: 18px;
       z-index: 1000;
-      box-shadow: 0 12px 35px rgba(81, 58, 40, 0.08);
     }
 
     .logo {
@@ -93,7 +98,7 @@
     }
 
     .logo span {
-      color: #a87956;
+      color: #a36f4f;
     }
 
     .nav-links {
@@ -108,16 +113,16 @@
     }
 
     .nav-links a:hover {
-      color: #a87956;
+      color: #a36f4f;
     }
 
-    .hire-btn {
+    .nav-btn {
+      background: #6f4d3c;
+      color: #fff;
       padding: 10px 20px;
-      background: #6d4c3d;
-      color: white;
       border-radius: 30px;
       font-size: 14px;
-      box-shadow: 0 8px 20px rgba(109, 76, 61, 0.25);
+      box-shadow: 0 10px 25px rgba(111, 77, 60, 0.25);
     }
 
     section {
@@ -128,157 +133,175 @@
     }
 
     .hero {
-      min-height: 86vh;
+      min-height: 88vh;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
       gap: 50px;
-      position: relative;
     }
 
-    .small-text {
-      font-size: 15px;
-      letter-spacing: 2px;
+    .mini-title {
+      color: #a36f4f;
       text-transform: uppercase;
-      color: #a87956;
-      margin-bottom: 12px;
-      font-weight: 600;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
     .hero h1 {
       font-family: "Playfair Display", serif;
       font-size: clamp(48px, 7vw, 92px);
       line-height: 0.95;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .hero h1 span {
-      color: #a87956;
       display: block;
+      color: #a36f4f;
     }
 
     .hero p {
-      max-width: 560px;
+      max-width: 570px;
+      color: #6c574b;
+      line-height: 1.9;
       font-size: 16px;
-      line-height: 1.8;
-      color: #6e5a4d;
       margin-bottom: 30px;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 16px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
-    .btn-primary,
-    .btn-secondary {
+    .btn {
       padding: 14px 24px;
       border-radius: 40px;
       font-weight: 600;
-      transition: 0.3s;
+      transition: 0.35s;
+      display: inline-block;
     }
 
     .btn-primary {
-      background: #6d4c3d;
-      color: white;
-      box-shadow: 0 12px 28px rgba(109, 76, 61, 0.25);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-5px);
+      background: #6f4d3c;
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(111, 77, 60, 0.25);
     }
 
     .btn-secondary {
-      border: 1px solid #b89778;
-      color: #6d4c3d;
+      border: 1px solid #b89171;
+      color: #6f4d3c;
+      background: rgba(255, 250, 242, 0.45);
     }
 
-    .btn-secondary:hover {
-      background: #fff7ee;
-      transform: translateY(-5px);
+    .btn:hover {
+      transform: translateY(-6px);
     }
 
-    .hero-image-area {
+    .hero-visual {
       position: relative;
-      height: 620px;
+      height: 640px;
       display: flex;
       align-items: center;
       justify-content: center;
-      perspective: 1000px;
+      perspective: 1100px;
     }
 
-    .main-photo-card {
+    .phone-card {
       width: 360px;
-      height: 500px;
-      border-radius: 220px 220px 35px 35px;
-      overflow: hidden;
-      box-shadow: 0 30px 70px rgba(83, 56, 38, 0.25);
-      border: 12px solid #fff8ef;
-      animation: mainFloat 4s ease-in-out infinite;
-      background: white;
+      height: 530px;
+      border-radius: 42px;
+      background: #fff8ef;
+      padding: 16px;
+      box-shadow: 0 35px 90px rgba(70, 45, 30, 0.28);
+      animation: mainFloat 4.5s ease-in-out infinite;
+      position: relative;
+      z-index: 4;
     }
 
-    .main-photo-card img {
+    .phone-card::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 8px;
+      background: #d8c2aa;
+      border-radius: 20px;
+      z-index: 5;
+    }
+
+    .phone-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border-radius: 32px;
     }
 
     @keyframes mainFloat {
       0%, 100% {
-        transform: translateY(0) rotateY(-3deg);
+        transform: translateY(0) rotateY(-5deg);
       }
       50% {
-        transform: translateY(-18px) rotateY(3deg);
+        transform: translateY(-22px) rotateY(5deg);
       }
     }
 
-    .floating-card {
+    .floating-panel {
       position: absolute;
       background: rgba(255, 250, 242, 0.92);
-      backdrop-filter: blur(14px);
-      border-radius: 24px;
-      padding: 20px;
-      box-shadow: 0 20px 45px rgba(82, 55, 38, 0.16);
-      border: 1px solid rgba(126, 91, 65, 0.12);
-      animation: floatCard 5s ease-in-out infinite;
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(120, 80, 50, 0.13);
+      box-shadow: 0 20px 50px rgba(80, 55, 38, 0.16);
+      border-radius: 28px;
+      padding: 18px;
+      z-index: 6;
+      animation: panelFloat 5s ease-in-out infinite;
     }
 
-    .floating-card h3 {
+    .floating-panel h3 {
       font-size: 15px;
-      margin-bottom: 10px;
-      color: #5c4033;
+      margin-bottom: 8px;
+      color: #4b3429;
     }
 
-    .floating-card p {
+    .floating-panel p {
       font-size: 13px;
-      line-height: 1.5;
-      color: #756154;
+      line-height: 1.55;
+      color: #715d51;
       margin: 0;
     }
 
-    .card-1 {
-      width: 230px;
-      left: -10px;
-      top: 80px;
+    .panel-one {
+      width: 245px;
+      left: -5px;
+      top: 95px;
     }
 
-    .card-2 {
-      width: 230px;
-      right: -10px;
-      top: 150px;
-      animation-delay: 1.5s;
+    .panel-two {
+      width: 240px;
+      right: -20px;
+      top: 165px;
+      animation-delay: 1.2s;
     }
 
-    .card-3 {
-      width: 250px;
-      right: 30px;
-      bottom: 60px;
-      animation-delay: 2.5s;
+    .panel-three {
+      width: 255px;
+      right: 35px;
+      bottom: 55px;
+      animation-delay: 2.3s;
     }
 
-    @keyframes floatCard {
+    .panel-four {
+      width: 220px;
+      left: 22px;
+      bottom: 95px;
+      animation-delay: 3s;
+    }
+
+    @keyframes panelFloat {
       0%, 100% {
         transform: translateY(0) rotate(-1deg);
       }
@@ -287,42 +310,108 @@
       }
     }
 
+    .mock-window {
+      width: 100%;
+      background: #fffaf3;
+      border-radius: 22px;
+      padding: 14px;
+      box-shadow: inset 0 0 0 1px rgba(100, 65, 45, 0.08);
+    }
+
+    .mock-top {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #b98b69;
+    }
+
+    .mock-line {
+      height: 8px;
+      border-radius: 20px;
+      background: #e2cbb5;
+      margin-bottom: 8px;
+    }
+
+    .mock-line.short {
+      width: 65%;
+    }
+
+    .mock-line.medium {
+      width: 82%;
+    }
+
+    .mock-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .mock-box {
+      height: 38px;
+      border-radius: 10px;
+      background: #ead8c6;
+    }
+
     .section-title {
       text-align: center;
       margin-bottom: 55px;
     }
 
     .section-title p {
-      color: #a87956;
+      color: #a36f4f;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .section-title h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(36px, 5vw, 60px);
+      font-size: clamp(38px, 5vw, 62px);
       margin-top: 8px;
     }
 
-    .about {
+    .about-area {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 50px;
       align-items: center;
     }
 
-    .about-img {
+    .about-image {
       position: relative;
     }
 
-    .about-img img {
+    .about-image img {
       width: 100%;
-      max-height: 540px;
+      height: 550px;
       object-fit: cover;
-      border-radius: 35px;
-      box-shadow: 0 25px 60px rgba(88, 62, 44, 0.2);
+      border-radius: 40px;
+      box-shadow: 0 28px 70px rgba(75, 50, 35, 0.2);
+    }
+
+    .about-badge {
+      position: absolute;
+      right: -25px;
+      bottom: 35px;
+      background: #fffaf3;
+      padding: 18px 22px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(70, 45, 30, 0.17);
+      animation: panelFloat 5s ease-in-out infinite;
+    }
+
+    .about-badge strong {
+      font-size: 28px;
+      color: #a36f4f;
+      display: block;
     }
 
     .about-text h2 {
@@ -332,9 +421,9 @@
     }
 
     .about-text p {
+      color: #6c574b;
       line-height: 1.9;
-      color: #6e5a4d;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .stats {
@@ -344,59 +433,59 @@
       margin-top: 30px;
     }
 
-    .stat-box {
+    .stat {
+      background: #fffaf3;
       padding: 22px;
-      border-radius: 20px;
-      background: #fffaf2;
-      box-shadow: 0 14px 30px rgba(77, 52, 35, 0.08);
+      border-radius: 22px;
       text-align: center;
+      box-shadow: 0 15px 35px rgba(75, 50, 35, 0.08);
     }
 
-    .stat-box h3 {
-      font-size: 28px;
-      color: #a87956;
+    .stat h3 {
+      font-size: 30px;
+      color: #a36f4f;
     }
 
-    .stat-box p {
-      font-size: 13px;
+    .stat p {
       margin: 0;
+      font-size: 13px;
     }
 
-    .services-grid {
+    .skills-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 22px;
     }
 
-    .service-card {
-      background: #fffaf2;
+    .skill-card {
+      background: #fffaf3;
       padding: 30px 24px;
-      border-radius: 28px;
-      min-height: 220px;
-      box-shadow: 0 18px 40px rgba(83, 56, 38, 0.08);
+      border-radius: 30px;
+      min-height: 225px;
+      box-shadow: 0 18px 45px rgba(75, 50, 35, 0.09);
+      border: 1px solid rgba(120, 80, 50, 0.08);
       transition: 0.35s;
-      border: 1px solid rgba(140, 103, 75, 0.08);
     }
 
-    .service-card:hover {
+    .skill-card:hover {
       transform: translateY(-12px) rotate(1deg);
-      box-shadow: 0 28px 55px rgba(83, 56, 38, 0.16);
+      box-shadow: 0 30px 60px rgba(75, 50, 35, 0.17);
     }
 
-    .service-icon {
-      font-size: 32px;
-      margin-bottom: 18px;
+    .skill-card .icon {
+      font-size: 35px;
+      margin-bottom: 16px;
     }
 
-    .service-card h3 {
+    .skill-card h3 {
       font-size: 18px;
       margin-bottom: 12px;
     }
 
-    .service-card p {
-      color: #756154;
+    .skill-card p {
+      color: #715d51;
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .projects-grid {
@@ -406,20 +495,21 @@
     }
 
     .project-card {
-      background: #fffaf2;
-      border-radius: 30px;
+      background: #fffaf3;
+      border-radius: 32px;
       overflow: hidden;
-      box-shadow: 0 18px 45px rgba(80, 54, 38, 0.1);
+      box-shadow: 0 20px 50px rgba(75, 50, 35, 0.1);
       transition: 0.35s;
+      position: relative;
     }
 
     .project-card:hover {
-      transform: translateY(-12px);
+      transform: translateY(-14px);
     }
 
     .project-card img {
       width: 100%;
-      height: 230px;
+      height: 235px;
       object-fit: cover;
     }
 
@@ -428,115 +518,116 @@
     }
 
     .project-content h3 {
-      margin-bottom: 10px;
       font-size: 20px;
+      margin-bottom: 10px;
     }
 
     .project-content p {
-      color: #756154;
+      color: #715d51;
       font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 15px;
+      line-height: 1.75;
+      margin-bottom: 16px;
     }
 
     .tag {
       display: inline-block;
-      padding: 6px 12px;
-      background: #ead8c2;
-      color: #6d4c3d;
+      padding: 7px 12px;
+      background: #ead6c2;
+      color: #6f4d3c;
       border-radius: 20px;
       font-size: 12px;
       margin-right: 6px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
+      font-weight: 600;
     }
 
-    .why-box {
-      background: #fffaf2;
-      border-radius: 36px;
+    .experience-box {
+      background: #fffaf3;
+      border-radius: 40px;
       padding: 55px;
+      box-shadow: 0 25px 65px rgba(75, 50, 35, 0.11);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 45px;
       align-items: center;
-      box-shadow: 0 25px 60px rgba(82, 55, 38, 0.1);
     }
 
-    .why-box h2 {
+    .experience-box h2 {
       font-family: "Playfair Display", serif;
-      font-size: 46px;
-      margin-bottom: 20px;
+      font-size: 48px;
+      margin-bottom: 18px;
     }
 
-    .why-list {
+    .experience-box p {
+      color: #6c574b;
+      line-height: 1.9;
+    }
+
+    .timeline {
       display: grid;
       gap: 18px;
     }
 
-    .why-item {
+    .timeline-item {
       padding: 18px 20px;
-      background: #f4eadf;
-      border-radius: 18px;
-      display: flex;
-      gap: 14px;
-      align-items: center;
+      border-radius: 20px;
+      background: #f2e4d3;
       transition: 0.3s;
+      border-left: 5px solid #a36f4f;
     }
 
-    .why-item:hover {
+    .timeline-item:hover {
       transform: translateX(10px);
     }
 
-    .check {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #6d4c3d;
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 14px;
-      flex-shrink: 0;
+    .timeline-item h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item p {
+      font-size: 13px;
+      margin: 0;
     }
 
     .contact {
-      text-align: center;
-      background: linear-gradient(135deg, #6d4c3d, #a87956);
+      background: linear-gradient(135deg, #6f4d3c, #a36f4f);
       color: white;
-      border-radius: 42px;
-      padding: 75px 35px;
-      box-shadow: 0 25px 65px rgba(109, 76, 61, 0.25);
+      text-align: center;
+      border-radius: 45px;
+      padding: 80px 35px;
+      box-shadow: 0 30px 75px rgba(111, 77, 60, 0.28);
       margin-bottom: 70px;
     }
 
     .contact h2 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(40px, 5vw, 70px);
+      font-size: clamp(42px, 6vw, 76px);
       margin-bottom: 18px;
     }
 
     .contact p {
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto 30px;
       line-height: 1.8;
-      opacity: 0.92;
+      opacity: 0.95;
     }
 
-    .contact .btn-primary {
-      background: #fffaf2;
-      color: #6d4c3d;
-      display: inline-block;
+    .contact .btn {
+      background: #fffaf3;
+      color: #6f4d3c;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      color: #756154;
+      color: #715d51;
       font-size: 14px;
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(60px);
+      transform: translateY(65px);
       transition: 0.9s ease;
     }
 
@@ -556,22 +647,18 @@
       }
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 980px) {
       .hero,
-      .about,
-      .why-box {
+      .about-area,
+      .experience-box {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 30px;
+      .hero-visual {
+        height: 610px;
       }
 
-      .hero-image-area {
-        height: 560px;
-      }
-
-      .services-grid,
+      .skills-grid,
       .projects-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -581,49 +668,71 @@
       }
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 640px) {
+      nav {
+        padding: 14px 20px;
+      }
+
+      .nav-btn {
+        display: none;
+      }
+
       section {
         padding: 60px 0;
       }
 
-      .hero-image-area {
-        height: 500px;
+      .hero-visual {
+        height: 560px;
       }
 
-      .main-photo-card {
-        width: 280px;
-        height: 390px;
+      .phone-card {
+        width: 285px;
+        height: 430px;
       }
 
-      .floating-card {
+      .floating-panel {
         padding: 14px;
       }
 
-      .card-1 {
+      .panel-one {
+        width: 185px;
         left: 0;
-        top: 30px;
+        top: 38px;
+      }
+
+      .panel-two {
         width: 180px;
-      }
-
-      .card-2 {
         right: 0;
-        top: 110px;
-        width: 175px;
+        top: 120px;
       }
 
-      .card-3 {
-        right: 15px;
-        bottom: 25px;
+      .panel-three {
         width: 190px;
+        right: 10px;
+        bottom: 25px;
       }
 
-      .services-grid,
+      .panel-four {
+        width: 175px;
+        left: 0;
+        bottom: 75px;
+      }
+
+      .skills-grid,
       .projects-grid,
       .stats {
         grid-template-columns: 1fr;
       }
 
-      .why-box {
+      .about-image img {
+        height: 430px;
+      }
+
+      .about-badge {
+        right: 10px;
+      }
+
+      .experience-box {
         padding: 35px 22px;
       }
     }
@@ -631,271 +740,325 @@
 </head>
 
 <body>
-  <div class="page-wrapper">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
 
-    <nav>
-      <div class="logo">Nalina<span>.</span></div>
+  <div class="scroll-bar" id="scrollBar"></div>
 
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#services">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+  <div class="background-shape shape-one"></div>
+  <div class="background-shape shape-two"></div>
+
+  <nav>
+    <div class="logo">Nalina<span>.</span></div>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <a href="#contact" class="nav-btn">Hire Me</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content reveal">
+      <div class="mini-title">Personal Portfolio</div>
+
+      <h1>
+        I built my own
+        <span class="type-text" id="typeText"></span>
+      </h1>
+
+      <p>
+        Hi, I am Nalina Thennakoon, a Computer Systems Engineering student and
+        aspiring software developer. I create modern websites, AI projects and
+        practical software solutions with clean design and professional presentation.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="phone-card">
+        <img src="images/profile.jpg" alt="Nalina professional profile image">
       </div>
 
-      <a href="#contact" class="hire-btn">Hire Me</a>
-    </nav>
+      <div class="floating-panel panel-one">
+        <h3>🎓 Education</h3>
+        <p>Computer Systems Engineering student at the University of Sunderland.</p>
+      </div>
 
-    <section class="hero" id="home">
-      <div class="hero-content reveal">
-        <div class="small-text">Portfolio Website</div>
-        <h1>
-          Hi, I am
-          <span class="type-text" id="typeText"></span>
-        </h1>
+      <div class="floating-panel panel-two">
+        <h3>💻 Skills</h3>
+        <p>HTML, CSS, JavaScript, Python, MySQL, GitHub and Machine Learning.</p>
+      </div>
+
+      <div class="floating-panel panel-three">
+        <div class="mock-window">
+          <div class="mock-top">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="mock-line medium"></div>
+          <div class="mock-line short"></div>
+          <div class="mock-grid">
+            <div class="mock-box"></div>
+            <div class="mock-box"></div>
+            <div class="mock-box"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="floating-panel panel-four">
+        <h3>✨ Career Goal</h3>
+        <p>Graduate tech role, internship or junior developer opportunity in the UK.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title reveal">
+      <p>About Me</p>
+      <h2>Who Am I?</h2>
+    </div>
+
+    <div class="about-area">
+      <div class="about-image reveal">
+        <img src="images/professional.png" alt="Nalina professional portrait">
+        <div class="about-badge">
+          <strong>5+</strong>
+          Projects Completed
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <h2>I design and build digital projects with purpose.</h2>
 
         <p>
-          I am a Computer Systems Engineering student with skills in web development,
-          machine learning, AI, databases and software projects. I build clean,
-          modern and professional digital solutions.
+          My name is Nalina Thennakoon. I completed a Higher National Diploma in
+          Software Engineering and I am currently studying Computer Systems Engineering.
+          I enjoy building websites, AI projects and software systems that solve
+          real problems.
         </p>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="btn-primary">View My Projects</a>
-          <a href="#contact" class="btn-secondary">Contact Me</a>
-        </div>
-      </div>
-
-      <div class="hero-image-area reveal">
-        <div class="main-photo-card">
-          <img src="images/profile.jpg" alt="Nalina profile image">
-        </div>
-
-        <div class="floating-card card-1">
-          <h3>🎓 Education</h3>
-          <p>Computer Systems Engineering student at University of Sunderland.</p>
-        </div>
-
-        <div class="floating-card card-2">
-          <h3>💻 Skills</h3>
-          <p>HTML, CSS, JavaScript, Python, MySQL, GitHub and Machine Learning.</p>
-        </div>
-
-        <div class="floating-card card-3">
-          <h3>✨ Goal</h3>
-          <p>Building a strong graduate tech portfolio for UK job applications.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="section-title reveal">
-        <p>More About Me</p>
-        <h2>Who Am I?</h2>
-      </div>
-
-      <div class="about">
-        <div class="about-img reveal">
-          <img src="images/professional.png" alt="Professional photo">
-        </div>
-
-        <div class="about-text reveal">
-          <h2>I build digital projects with purpose.</h2>
-
-          <p>
-            My name is Nalina Thennakoon. I have completed a Higher National Diploma
-            in Software Engineering and I am currently studying Computer Systems
-            Engineering. I enjoy creating websites, AI projects and practical software
-            solutions.
-          </p>
-
-          <p>
-            I like working on clean design, useful features and projects that show real
-            technical skills. My main focus is to grow as a front-end developer,
-            software developer and AI enthusiast.
-          </p>
-
-          <div class="stats">
-            <div class="stat-box">
-              <h3>5+</h3>
-              <p>Projects</p>
-            </div>
-            <div class="stat-box">
-              <h3>2+</h3>
-              <p>AI Projects</p>
-            </div>
-            <div class="stat-box">
-              <h3>1</h3>
-              <p>Portfolio</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="section-title reveal">
-        <p>My Skills</p>
-        <h2>What I Can Do</h2>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-icon">🌐</div>
-          <h3>Web Development</h3>
-          <p>Modern responsive websites using HTML, CSS, JavaScript and clean UI design.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon">🤖</div>
-          <h3>Machine Learning</h3>
-          <p>Python, Pandas, NumPy, Scikit-learn, CNN models and evaluation metrics.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon">🗄️</div>
-          <h3>Database</h3>
-          <p>MySQL database design, CRUD operations and phpMyAdmin project setup.</p>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon">🧰</div>
-          <h3>Tools</h3>
-          <p>Git, GitHub, VS Code, XAMPP, Canva and project documentation.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="section-title reveal">
-        <p>My Previous Projects</p>
-        <h2>Portfolio Projects</h2>
-      </div>
-
-      <div class="projects-grid">
-        <div class="project-card reveal">
-          <img src="images/ai-portfolio.png" alt="AI portfolio project">
-          <div class="project-content">
-            <h3>AI Loan Approval System</h3>
-            <p>
-              Built a machine learning model using Logistic Regression and Random Forest
-              with SHAP and LIME explanations.
-            </p>
-            <span class="tag">Python</span>
-            <span class="tag">SHAP</span>
-            <span class="tag">LIME</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <img src="images/ai-portfolio.png" alt="Deep learning project">
-          <div class="project-content">
-            <h3>Deep Learning Project</h3>
-            <p>
-              MNIST CNN classification and KITTI object detection using Faster R-CNN
-              evaluation.
-            </p>
-            <span class="tag">CNN</span>
-            <span class="tag">PyTorch</span>
-            <span class="tag">KITTI</span>
-          </div>
-        </div>
-
-        <div class="project-card reveal">
-          <img src="images/ai-portfolio.png" alt="Portfolio website">
-          <div class="project-content">
-            <h3>Personal Portfolio Website</h3>
-            <p>
-              A modern animated portfolio website designed to showcase my skills,
-              projects and career profile.
-            </p>
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="why-box reveal">
-        <div>
-          <h2>Why Work With Me?</h2>
-          <p>
-            I am motivated, detail-oriented and always improving my technical skills.
-            I enjoy building projects that are simple, useful and visually professional.
-          </p>
-        </div>
-
-        <div class="why-list">
-          <div class="why-item">
-            <div class="check">✓</div>
-            <p>Clean and modern design</p>
-          </div>
-
-          <div class="why-item">
-            <div class="check">✓</div>
-            <p>Fast learner and consistent</p>
-          </div>
-
-          <div class="why-item">
-            <div class="check">✓</div>
-            <p>Good project documentation</p>
-          </div>
-
-          <div class="why-item">
-            <div class="check">✓</div>
-            <p>Passionate about technology</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="contact reveal">
-        <h2>Let’s Work Together!</h2>
         <p>
-          Whether you are looking for a junior developer, graduate intern or project
-          collaborator, I would love to connect and discuss opportunities.
+          My portfolio focuses on clean user interface design, responsive layouts,
+          strong project presentation and technical skills. I am improving my
+          front-end development, programming and AI knowledge to become job-ready
+          for the UK tech industry.
         </p>
 
-        <a href="mailto:your-email@gmail.com" class="btn-primary">Email Me</a>
-      </div>
-    </section>
+        <div class="stats">
+          <div class="stat">
+            <h3>5+</h3>
+            <p>Projects</p>
+          </div>
 
-    <footer>
-      <p>© 2026 Nalina Thennakoon. Designed with HTML, CSS and JavaScript.</p>
-    </footer>
-  </div>
+          <div class="stat">
+            <h3>2+</h3>
+            <p>AI Projects</p>
+          </div>
+
+          <div class="stat">
+            <h3>1</h3>
+            <p>Portfolio Website</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title reveal">
+      <p>My Skills</p>
+      <h2>What I Can Do</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="icon">🌐</div>
+        <h3>Web Development</h3>
+        <p>
+          Responsive websites using HTML, CSS, JavaScript and modern UI design.
+        </p>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="icon">🤖</div>
+        <h3>Machine Learning</h3>
+        <p>
+          Python, Pandas, NumPy, Scikit-learn, CNN models and model evaluation.
+        </p>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="icon">🗄️</div>
+        <h3>Database</h3>
+        <p>
+          MySQL database design, CRUD operations and phpMyAdmin project setup.
+        </p>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="icon">🧰</div>
+        <h3>Tools</h3>
+        <p>
+          Git, GitHub, VS Code, XAMPP, Canva and technical documentation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title reveal">
+      <p>Portfolio Work</p>
+      <h2>My Projects</h2>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <img src="images/project-ai.jpg" alt="AI loan approval project">
+        <div class="project-content">
+          <h3>AI Loan Approval System</h3>
+          <p>
+            Machine learning project using Logistic Regression and Random Forest
+            with SHAP and LIME explainability.
+          </p>
+          <span class="tag">Python</span>
+          <span class="tag">SHAP</span>
+          <span class="tag">LIME</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="images/project-dl.jpg" alt="Deep learning project">
+        <div class="project-content">
+          <h3>Deep Learning Project</h3>
+          <p>
+            MNIST CNN classification and KITTI object detection using Faster R-CNN.
+          </p>
+          <span class="tag">CNN</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">KITTI</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="images/project-web.jpg" alt="Web portfolio project">
+        <div class="project-content">
+          <h3>Personal Portfolio Website</h3>
+          <p>
+            Animated personal portfolio website with floating cards, smooth
+            scrolling and professional layout.
+          </p>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="experience-box reveal">
+      <div>
+        <h2>Why Work With Me?</h2>
+        <p>
+          I am motivated, consistent and focused on improving my technical skills.
+          I like building projects that look professional, work properly and clearly
+          show my ability to learn and develop.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Clean Design</h3>
+          <p>Modern layouts with simple and professional user experience.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Project Focused</h3>
+          <p>Strong portfolio work with real academic and technical projects.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Fast Learner</h3>
+          <p>Always improving skills in web, software and AI development.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Career Ready</h3>
+          <p>Prepared for internship, junior developer and graduate roles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact reveal">
+      <h2>Let’s Work Together</h2>
+
+      <p>
+        I am open to junior developer, graduate, internship and project
+        collaboration opportunities. Feel free to contact me.
+      </p>
+
+      <a href="mailto:kawidunimantha872@gmail.com" class="btn">Email Me</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Nalina Thennakoon. Designed with HTML, CSS and JavaScript.</p>
+  </footer>
 
   <script>
-    const text = "Nalina";
     const typeText = document.getElementById("typeText");
-    let index = 0;
+    const words = ["Portfolio", "Website", "Brand"];
+    let wordIndex = 0;
+    let letterIndex = 0;
+    let deleting = false;
 
     function typeEffect() {
-      if (index < text.length) {
-        typeText.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 180);
+      const currentWord = words[wordIndex];
+
+      if (!deleting) {
+        typeText.textContent = currentWord.substring(0, letterIndex + 1);
+        letterIndex++;
+
+        if (letterIndex === currentWord.length) {
+          deleting = true;
+          setTimeout(typeEffect, 1200);
+          return;
+        }
+      } else {
+        typeText.textContent = currentWord.substring(0, letterIndex - 1);
+        letterIndex--;
+
+        if (letterIndex === 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+        }
       }
+
+      setTimeout(typeEffect, deleting ? 90 : 160);
     }
 
-    window.addEventListener("load", typeEffect);
+    typeEffect();
 
     const reveals = document.querySelectorAll(".reveal");
 
     function revealOnScroll() {
-      reveals.forEach((element) => {
+      reveals.forEach((item) => {
         const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const revealPoint = 120;
+        const elementTop = item.getBoundingClientRect().top;
+        const revealPoint = 110;
 
         if (elementTop < windowHeight - revealPoint) {
-          element.classList.add("active");
+          item.classList.add("active");
         }
       });
     }
@@ -903,16 +1066,29 @@
     window.addEventListener("scroll", revealOnScroll);
     window.addEventListener("load", revealOnScroll);
 
+    const scrollBar = document.getElementById("scrollBar");
+
+    window.addEventListener("scroll", () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+      scrollBar.style.width = scrollPercent + "%";
+    });
+
     document.addEventListener("mousemove", (event) => {
-      const cards = document.querySelectorAll(".floating-card");
+      const panels = document.querySelectorAll(".floating-panel");
       const x = event.clientX / window.innerWidth - 0.5;
       const y = event.clientY / window.innerHeight - 0.5;
 
-      cards.forEach((card, i) => {
-        const speed = (i + 1) * 8;
-        card.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+      panels.forEach((panel, index) => {
+        const speed = (index + 1) * 8;
+        panel.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
       });
     });
   </script>
+
 </body>
 </html>
