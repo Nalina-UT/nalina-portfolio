@@ -1,298 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional portfolio of Nalina Thennakoon - Computer Systems Engineering student, software developer, web developer and AI/data analytics learner." />
-  <meta name="keywords" content="Nalina Thennakoon, Software Developer, Web Developer, AI, Data Analytics, Computer Systems Engineering, Portfolio" />
-  <meta name="author" content="Nalina Thennakoon" />
-  <title>Nalina Thennakoon | Software Developer Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <style>
-    :root{
-      --bg:#06111f;
-      --bg2:#0b1730;
-      --text:#f8fbff;
-      --muted:#aab8d4;
-      --primary:#5eead4;
-      --secondary:#60a5fa;
-      --accent:#c084fc;
-      --card:rgba(255,255,255,.085);
-      --card2:rgba(255,255,255,.13);
-      --stroke:rgba(255,255,255,.16);
-      --shadow:0 24px 80px rgba(0,0,0,.42);
-      --radius:28px;
-    }
-
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-      line-height:1.7;
-    }
-    body::before{
-      content:"";
-      position:fixed;inset:0;z-index:-3;
-      background:
-        radial-gradient(circle at 15% 20%,rgba(94,234,212,.20),transparent 28%),
-        radial-gradient(circle at 85% 15%,rgba(192,132,252,.19),transparent 29%),
-        radial-gradient(circle at 50% 100%,rgba(96,165,250,.22),transparent 33%),
-        linear-gradient(135deg,var(--bg),var(--bg2) 55%,#111827);
-    }
-    body::after{
-      content:"";position:fixed;inset:0;z-index:-2;opacity:.38;
-      background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
-      background-size:42px 42px;
-      mask-image:linear-gradient(to bottom,black,transparent 85%);
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(1180px,92%);margin:auto}
-
-    .preloader{
-      position:fixed;inset:0;z-index:9999;background:#06111f;display:grid;place-items:center;transition:.65s ease;
-    }
-    .preloader.hide{opacity:0;visibility:hidden}
-    .loader{
-      width:72px;height:72px;border-radius:50%;border:4px solid rgba(255,255,255,.13);border-top-color:var(--primary);animation:spin 1s linear infinite;
-    }
-    @keyframes spin{to{transform:rotate(360deg)}}
-
-    .cursor-glow{position:fixed;width:360px;height:360px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,rgba(94,234,212,.17),transparent 65%);transform:translate(-50%,-50%);filter:blur(3px)}
-
-    .nav{
-      position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1180px,92%);z-index:1000;
-      display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;border:1px solid var(--stroke);border-radius:24px;background:rgba(6,17,31,.72);backdrop-filter:blur(22px);box-shadow:var(--shadow);
-    }
-    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2px}
-    .brand img{width:42px;height:42px;object-fit:cover;border-radius:16px;border:2px solid rgba(94,234,212,.48)}
-    .brand span{background:linear-gradient(135deg,#fff,var(--primary));-webkit-background-clip:text;color:transparent}
-    .nav-links{display:flex;align-items:center;gap:22px}
-    .nav-links a{font-size:14px;font-weight:800;color:var(--muted);transition:.25s}
-    .nav-links a:hover,.nav-links a.active{color:var(--primary)}
-    .nav-btns{display:flex;align-items:center;gap:10px}
-    .icon-btn,.menu-btn{width:42px;height:42px;border-radius:15px;border:1px solid var(--stroke);background:var(--card);color:var(--text);display:grid;place-items:center;cursor:pointer;transition:.25s}
-    .icon-btn:hover,.menu-btn:hover{transform:translateY(-3px);border-color:var(--primary)}
-    .menu-btn{display:none}
-
-    .hero{min-height:100vh;display:flex;align-items:center;padding:142px 0 90px;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.07fr .93fr;gap:55px;align-items:center}
-    .badge{display:inline-flex;align-items:center;gap:10px;padding:10px 15px;border-radius:999px;border:1px solid rgba(94,234,212,.28);background:rgba(94,234,212,.09);color:var(--primary);font-size:13px;font-weight:900;margin-bottom:22px}
-    .badge .dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.7);animation:pulse 1.8s infinite}
-    @keyframes pulse{70%{box-shadow:0 0 0 12px rgba(34,197,94,0)}}
-    h1{font-size:clamp(46px,7.2vw,86px);line-height:.96;letter-spacing:-3px;margin-bottom:18px}
-    .gradient{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));-webkit-background-clip:text;color:transparent}
-    .typing{font-size:clamp(20px,2vw,28px);font-weight:900;color:#dff7ff;min-height:42px;margin-bottom:20px}
-    .typing span{color:var(--primary)}
-    .hero p{font-size:17px;color:var(--muted);max-width:690px;margin-bottom:28px}
-    .btn-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:17px;font-weight:900;border:1px solid var(--stroke);transition:.25s;cursor:pointer}
-    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#04111f;box-shadow:0 18px 42px rgba(94,234,212,.23);border:0}
-    .btn-ghost{background:var(--card);color:var(--text)}
-    .btn:hover{transform:translateY(-4px)}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:650px}
-    .stat{padding:18px;border-radius:22px;background:var(--card);border:1px solid var(--stroke);backdrop-filter:blur(16px)}
-    .stat b{font-size:27px;color:var(--primary)}
-    .stat span{display:block;color:var(--muted);font-size:13px;font-weight:700}
-
-    .visual{position:relative}
-    .orb{position:absolute;border-radius:50%;filter:blur(.2px);animation:float 5s ease-in-out infinite;z-index:1}
-    .orb.one{width:92px;height:92px;background:linear-gradient(135deg,var(--primary),transparent);top:4%;left:-6%}
-    .orb.two{width:58px;height:58px;background:linear-gradient(135deg,var(--accent),transparent);right:4%;bottom:8%;animation-delay:1s}
-    .profile-card{position:relative;z-index:2;padding:24px;border-radius:38px;background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.055));border:1px solid var(--stroke);box-shadow:var(--shadow);backdrop-filter:blur(20px);animation:float 6s ease-in-out infinite;overflow:hidden}
-    .profile-card::before{content:"";position:absolute;width:260px;height:260px;background:radial-gradient(circle,rgba(94,234,212,.24),transparent 70%);right:-100px;top:-90px}
-    .photo-wrap{position:relative;border-radius:32px;overflow:hidden;border:1px solid rgba(255,255,255,.18)}
-    .photo-wrap img{width:100%;height:520px;object-fit:cover;object-position:center 28%;filter:saturate(1.05) contrast(1.03)}
-    .photo-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(6,17,31,.72),transparent 48%)}
-    .photo-label{position:absolute;left:22px;right:22px;bottom:20px;z-index:3;padding:18px;border-radius:22px;background:rgba(6,17,31,.72);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(15px)}
-    .photo-label h3{font-size:22px;margin-bottom:2px}.photo-label p{color:var(--muted);font-size:14px;margin:0}
-    .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.chip{font-size:12px;font-weight:900;color:#eafcff;border:1px solid rgba(94,234,212,.24);background:rgba(94,234,212,.09);padding:8px 10px;border-radius:999px}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
-
-    section{padding:92px 0}.section-head{text-align:center;margin-bottom:45px}.section-head small{color:var(--primary);font-weight:900;letter-spacing:2px;text-transform:uppercase}.section-head h2{font-size:clamp(32px,4.5vw,52px);letter-spacing:-1.5px;margin:8px 0}.section-head p{color:var(--muted);max-width:760px;margin:auto}
-    .glass{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(18px)}
-
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.about-box{padding:32px}.about-box p{color:var(--muted);margin-bottom:16px}.highlight{display:flex;gap:15px;padding:17px;border-radius:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);margin-bottom:14px}.highlight i{width:46px;height:46px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,rgba(94,234,212,.18),rgba(96,165,250,.14));color:var(--primary);font-size:20px}.highlight b{display:block;margin-bottom:2px}.highlight span{color:var(--muted);font-size:14px}
-
-    .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.skill{padding:24px;transition:.3s;position:relative;overflow:hidden}.skill:hover,.project:hover,.road:hover{transform:translateY(-9px);border-color:rgba(94,234,212,.35)}.skill i,.project-icon,.road i{width:52px;height:52px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,rgba(94,234,212,.17),rgba(192,132,252,.13));color:var(--primary);font-size:24px;margin-bottom:16px}.skill h3{margin-bottom:8px}.skill p{color:var(--muted);font-size:14px}.bar{height:9px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:16px}.bar span{display:block;height:100%;width:var(--w);border-radius:inherit;background:linear-gradient(135deg,var(--primary),var(--secondary));transform-origin:left;animation:fill 1.4s ease both}.skill:nth-child(2) .bar span{animation-delay:.1s}.skill:nth-child(3) .bar span{animation-delay:.2s}.skill:nth-child(4) .bar span{animation-delay:.3s}@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-
-    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.project{padding:28px;transition:.3s;min-height:310px;display:flex;flex-direction:column}.project-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:14px}.status{font-size:12px;font-weight:900;padding:8px 11px;border-radius:999px;border:1px solid rgba(94,234,212,.24);background:rgba(94,234,212,.09);color:var(--primary);white-space:nowrap}.project h3{font-size:22px;margin-bottom:10px}.project p{color:var(--muted);font-size:14.5px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tags span{font-size:12px;font-weight:900;padding:7px 10px;border-radius:999px;background:rgba(96,165,250,.11);border:1px solid rgba(96,165,250,.18);color:#d9ebff}.project-actions{margin-top:auto;padding-top:22px;display:flex;gap:10px;flex-wrap:wrap}.mini-btn{font-size:13px;font-weight:900;padding:10px 13px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid var(--stroke);transition:.25s}.mini-btn:hover{background:rgba(94,234,212,.12);border-color:var(--primary);transform:translateY(-2px)}
-
-    .timeline{max-width:920px;margin:auto;display:grid;gap:18px}.time-card{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;padding:24px}.time-card strong{color:var(--primary)}.time-card p{color:var(--muted)}
-    .road-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.road{padding:26px;transition:.3s}.road h3{margin:12px 0 8px}.road p{color:var(--muted);font-size:14px}
-
-    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}.contact-box{padding:30px}.contact-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}.contact-item i{width:44px;height:44px;display:grid;place-items:center;border-radius:16px;background:rgba(94,234,212,.12);color:var(--primary)}.contact-item p{color:var(--muted)}
-    form{display:grid;gap:14px}input,textarea{width:100%;border:1px solid var(--stroke);background:rgba(255,255,255,.07);color:var(--text);border-radius:16px;padding:14px 15px;outline:none;font:inherit}input:focus,textarea:focus{border-color:var(--primary)}textarea{min-height:145px;resize:vertical}
-    .footer{padding:34px 0;text-align:center;color:var(--muted);border-top:1px solid var(--stroke)}.footer b{color:var(--primary)}
-
-    .reveal{opacity:0;transform:translateY(34px);transition:.8s cubic-bezier(.2,.75,.2,1)}.reveal.show{opacity:1;transform:translateY(0)}
-
-    .light{--bg:#f7fbff;--bg2:#eaf3ff;--text:#102033;--muted:#5f6f86;--card:rgba(255,255,255,.72);--card2:rgba(255,255,255,.86);--stroke:rgba(20,60,110,.14);--shadow:0 24px 70px rgba(15,54,94,.14)}
-    .light body::before{background:#fff}.light .nav{background:rgba(255,255,255,.76)}
-
-    @media(max-width:980px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:repeat(2,1fr)}.projects-grid,.road-grid{grid-template-columns:1fr}.photo-wrap img{height:470px}.profile-card{max-width:560px;margin:auto}.hero{text-align:left}}
-    @media(max-width:760px){.menu-btn{display:grid}.brand span{display:none}.nav-links{position:absolute;left:0;right:0;top:76px;display:none;flex-direction:column;align-items:flex-start;padding:18px;border-radius:22px;background:rgba(6,17,31,.92);border:1px solid var(--stroke);backdrop-filter:blur(20px)}.nav-links.open{display:flex}.light .nav-links{background:rgba(255,255,255,.94)}.hero{padding-top:130px}.stats{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.time-card{grid-template-columns:1fr}h1{letter-spacing:-2px}.photo-wrap img{height:410px}}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Nalina Thennakoon - Software Developer, Web Developer, AI and Data Analytics learner portfolio." />
+<title>Nalina Thennakoon | Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{
+  --bg:#050816;--bg2:#0b1023;--text:#f8fbff;--muted:#a9b4ce;--primary:#64ffda;--blue:#7dd3fc;--pink:#f0abfc;--purple:#a78bfa;--card:rgba(255,255,255,.08);--stroke:rgba(255,255,255,.16);--shadow:0 30px 90px rgba(0,0,0,.42);--radius:30px
+}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.container{width:min(1180px,92%);margin:auto}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 12% 18%,rgba(100,255,218,.22),transparent 28%),radial-gradient(circle at 88% 14%,rgba(240,171,252,.20),transparent 28%),radial-gradient(circle at 55% 100%,rgba(125,211,252,.20),transparent 34%),linear-gradient(135deg,#050816,#0b1023 55%,#111827)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;opacity:.32;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 88%)}
+.preloader{position:fixed;inset:0;z-index:9999;background:#050816;display:grid;place-items:center;transition:.6s}.preloader.hide{opacity:0;visibility:hidden}.loader{width:78px;height:78px;border-radius:50%;border:4px solid rgba(255,255,255,.12);border-top-color:var(--primary);animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.cursor-glow{position:fixed;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,rgba(100,255,218,.14),transparent 65%);transform:translate(-50%,-50%);filter:blur(6px)}
+.nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1180px,92%);z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 16px;border:1px solid var(--stroke);border-radius:26px;background:rgba(5,8,22,.72);backdrop-filter:blur(22px);box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900}.brand img{width:44px;height:44px;object-fit:cover;border-radius:16px;border:2px solid rgba(100,255,218,.45)}.brand span{background:linear-gradient(135deg,#fff,var(--primary));-webkit-background-clip:text;color:transparent}.nav-links{display:flex;gap:22px}.nav-links a{font-size:14px;font-weight:800;color:var(--muted);transition:.25s}.nav-links a:hover,.nav-links a.active{color:var(--primary)}.nav-btns{display:flex;gap:10px}.icon-btn,.menu-btn{width:43px;height:43px;border-radius:15px;border:1px solid var(--stroke);background:var(--card);color:var(--text);display:grid;place-items:center;cursor:pointer;transition:.25s}.icon-btn:hover,.menu-btn:hover{transform:translateY(-3px);border-color:var(--primary)}.menu-btn{display:none}
+.hero{min-height:100vh;display:flex;align-items:center;padding:145px 0 92px;position:relative}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}.badge{display:inline-flex;align-items:center;gap:10px;padding:10px 15px;border-radius:999px;border:1px solid rgba(100,255,218,.28);background:rgba(100,255,218,.09);color:var(--primary);font-size:13px;font-weight:900;margin-bottom:22px}.dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.7);animation:pulse 1.8s infinite}@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(34,197,94,0)}}
+h1{font-size:clamp(48px,7.5vw,92px);line-height:.93;letter-spacing:-4px;margin-bottom:20px}.gradient{background:linear-gradient(135deg,var(--primary),var(--blue),var(--pink));-webkit-background-clip:text;color:transparent}.typing{font-size:clamp(20px,2vw,29px);font-weight:900;color:#e8fbff;min-height:42px;margin-bottom:20px}.typing span{color:var(--primary)}.hero p{font-size:17px;color:var(--muted);max-width:680px;margin-bottom:28px}.btn-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:30px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:17px;font-weight:900;border:1px solid var(--stroke);transition:.25s;cursor:pointer}.btn-primary{background:linear-gradient(135deg,var(--primary),var(--blue));color:#04111f;box-shadow:0 18px 45px rgba(100,255,218,.23);border:0}.btn-ghost{background:var(--card);color:var(--text)}.btn:hover{transform:translateY(-4px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:650px}.stat{padding:18px;border-radius:23px;background:var(--card);border:1px solid var(--stroke);backdrop-filter:blur(16px)}.stat b{font-size:28px;color:var(--primary)}.stat span{display:block;color:var(--muted);font-size:13px;font-weight:700}
+.visual{position:relative}.orb{position:absolute;border-radius:50%;animation:float 5s ease-in-out infinite;z-index:1}.orb.one{width:100px;height:100px;background:linear-gradient(135deg,var(--primary),transparent);top:2%;left:-6%}.orb.two{width:66px;height:66px;background:linear-gradient(135deg,var(--pink),transparent);right:3%;bottom:6%;animation-delay:1s}.profile-card{position:relative;z-index:2;padding:18px;border-radius:42px;background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.055));border:1px solid var(--stroke);box-shadow:var(--shadow),0 0 50px rgba(100,255,218,.12);backdrop-filter:blur(22px);animation:float 6s ease-in-out infinite;overflow:hidden}.profile-card:before{content:"";position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(100,255,218,.22),transparent 70%);right:-120px;top:-110px}.photo-wrap{position:relative;border-radius:34px;overflow:hidden;border:1px solid rgba(255,255,255,.18)}.photo-wrap img{width:100%;height:590px;object-fit:cover;object-position:center top;filter:saturate(1.04) contrast(1.04);transition:.55s}.photo-wrap:hover img{transform:scale(1.045)}.photo-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,22,.78),transparent 54%)}.photo-label{position:absolute;left:22px;right:22px;bottom:20px;z-index:3;padding:18px;border-radius:24px;background:rgba(5,8,22,.68);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(16px)}.photo-label h3{font-size:23px}.photo-label p{color:var(--muted);font-size:14px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.chip{font-size:12px;font-weight:900;color:#eafffb;border:1px solid rgba(100,255,218,.24);background:rgba(100,255,218,.09);padding:7px 10px;border-radius:999px}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+section{padding:96px 0}.section-head{text-align:center;margin-bottom:46px}.section-head small{color:var(--primary);font-weight:900;letter-spacing:2px;text-transform:uppercase}.section-head h2{font-size:clamp(34px,4.7vw,56px);letter-spacing:-1.8px;margin:8px 0}.section-head p{color:var(--muted);max-width:760px;margin:auto}.glass{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);box-shadow:var(--shadow);backdrop-filter:blur(18px)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.about-box{padding:32px}.about-box p{color:var(--muted);margin-bottom:16px}.highlight{display:flex;gap:15px;padding:17px;border-radius:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);margin-bottom:14px}.highlight i{width:46px;height:46px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,rgba(100,255,218,.18),rgba(125,211,252,.14));color:var(--primary);font-size:20px}.highlight span{color:var(--muted);font-size:14px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.skill{padding:24px;transition:.3s}.skill:hover,.project:hover,.service:hover,.road:hover{transform:translateY(-9px);border-color:rgba(100,255,218,.35)}.skill i,.project-icon,.service i,.road i{width:54px;height:54px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(135deg,rgba(100,255,218,.17),rgba(240,171,252,.13));color:var(--primary);font-size:24px;margin-bottom:16px}.skill p,.service p,.road p,.project p{color:var(--muted);font-size:14.5px}.bar{height:9px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:16px}.bar span{display:block;height:100%;width:var(--w);border-radius:inherit;background:linear-gradient(135deg,var(--primary),var(--blue));animation:fill 1.4s ease both}@keyframes fill{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}
+.services-grid,.road-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service,.road{padding:27px;transition:.3s}.price{display:inline-block;margin-top:18px;color:var(--primary);font-weight:900}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.project{padding:28px;transition:.3s;min-height:330px;display:flex;flex-direction:column}.project-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:14px}.status{font-size:12px;font-weight:900;padding:8px 11px;border-radius:999px;border:1px solid rgba(100,255,218,.24);background:rgba(100,255,218,.09);color:var(--primary);white-space:nowrap}.project h3{font-size:23px;margin-bottom:10px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tags span{font-size:12px;font-weight:900;padding:7px 10px;border-radius:999px;background:rgba(125,211,252,.11);border:1px solid rgba(125,211,252,.18);color:#dff4ff}.project-actions{margin-top:auto;padding-top:22px;display:flex;gap:10px;flex-wrap:wrap}.mini-btn{font-size:13px;font-weight:900;padding:10px 13px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid var(--stroke);transition:.25s}.mini-btn:hover{background:rgba(100,255,218,.12);border-color:var(--primary);transform:translateY(-2px)}.sweet{background:linear-gradient(135deg,rgba(255,116,174,.13),rgba(100,255,218,.08));border-color:rgba(255,116,174,.24)}
+.timeline{max-width:920px;margin:auto;display:grid;gap:18px}.time-card{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;padding:24px}.time-card strong{color:var(--primary)}.time-card p{color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:22px}.contact-box{padding:30px}.contact-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}.contact-item i{width:44px;height:44px;display:grid;place-items:center;border-radius:16px;background:rgba(100,255,218,.12);color:var(--primary)}.contact-item p{color:var(--muted)}form{display:grid;gap:14px}input,textarea{width:100%;border:1px solid var(--stroke);background:rgba(255,255,255,.07);color:var(--text);border-radius:16px;padding:14px 15px;outline:none;font:inherit}input:focus,textarea:focus{border-color:var(--primary)}textarea{min-height:145px;resize:vertical}.footer{padding:34px 0;text-align:center;color:var(--muted);border-top:1px solid var(--stroke)}.footer b{color:var(--primary)}.reveal{opacity:0;transform:translateY(34px);transition:.8s cubic-bezier(.2,.75,.2,1)}.reveal.show{opacity:1;transform:translateY(0)}
+.light{--bg:#f7fbff;--bg2:#eaf3ff;--text:#102033;--muted:#5f6f86;--card:rgba(255,255,255,.74);--stroke:rgba(20,60,110,.14);--shadow:0 24px 70px rgba(15,54,94,.14)}.light .nav{background:rgba(255,255,255,.78)}
+@media(max-width:980px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:repeat(2,1fr)}.projects-grid,.services-grid,.road-grid{grid-template-columns:1fr}.profile-card{max-width:560px;margin:auto}.photo-wrap img{height:500px}}
+@media(max-width:760px){.menu-btn{display:grid}.brand span{display:none}.nav-links{position:absolute;left:0;right:0;top:76px;display:none;flex-direction:column;align-items:flex-start;padding:18px;border-radius:22px;background:rgba(5,8,22,.94);border:1px solid var(--stroke);backdrop-filter:blur(20px)}.nav-links.open{display:flex}.light .nav-links{background:rgba(255,255,255,.96)}.hero{padding-top:130px}.stats{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.time-card{grid-template-columns:1fr}h1{letter-spacing:-2px}.photo-wrap img{height:430px}}
+</style>
 </head>
 <body>
-  <div class="preloader"><div class="loader"></div></div>
-  <div class="cursor-glow" id="cursorGlow"></div>
-
-  <nav class="nav">
-    <a href="#home" class="brand"><img src="avatar.jpg" alt="Nalina Thennakoon"><span>Nalina Portfolio</span></a>
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#roadmap">Roadmap</a><a href="#education">Education</a><a href="#contact">Contact</a>
-    </div>
-    <div class="nav-btns">
-      <button class="icon-btn" id="themeBtn" aria-label="Change theme"><i class="fa-solid fa-moon"></i></button>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <div class="badge"><span class="dot"></span>Available for junior developer, internship and freelance projects</div>
-          <h1>Hi, I’m <span class="gradient">Nalina Thennakoon</span></h1>
-          <div class="typing">I build <span id="typingText"></span></div>
-          <p>A Computer Systems Engineering student with a Software Engineering background. I create clean websites, practical applications, AI projects and data-driven solutions with a professional user experience.</p>
-          <div class="btn-row">
-            <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> View Projects</a>
-            <a href="#contact" class="btn btn-ghost"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
-            <a href="https://github.com/Nalina-UT" target="_blank" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a>
-          </div>
-          <div class="stats">
-            <div class="stat"><b>7+</b><span>Projects & roadmap ideas</span></div>
-            <div class="stat"><b>8+</b><span>Technical skill areas</span></div>
-            <div class="stat"><b>100%</b><span>Learning mindset</span></div>
-          </div>
-        </div>
-        <div class="visual reveal">
-          <span class="orb one"></span><span class="orb two"></span>
-          <div class="profile-card">
-            <div class="photo-wrap">
-              <img src="profile.jpg" alt="Professional photo of Nalina Thennakoon">
-              <div class="photo-label">
-                <h3>Nalina Thennakoon</h3>
-                <p>Software Developer • Web Developer • AI & Data Learner</p>
-                <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">C#</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-head reveal"><small>About Me</small><h2>Professional, practical and always improving</h2><p>I focus on building real projects that show both technical knowledge and clean presentation.</p></div>
-        <div class="about-grid">
-          <div class="about-box glass reveal">
-            <p>My name is <strong>Nalina Thennakoon</strong>. I completed a <strong>Higher National Diploma in Software Engineering</strong> and I am currently studying <strong>Computer Systems Engineering</strong> at the University of Sunderland.</p>
-            <p>I enjoy creating modern websites, Android apps, C# software systems and AI/data analytics projects. My goal is to become a confident software developer who can build reliable and user-friendly solutions.</p>
-            <p>This portfolio presents my strongest academic and personal projects with a clean, professional style suitable for LinkedIn, GitHub and job applications.</p>
-          </div>
-          <div class="about-box glass reveal">
-            <div class="highlight"><i class="fa-solid fa-code"></i><div><b>Development Focus</b><span>Responsive websites, software systems, Android apps and clean UI design.</span></div></div>
-            <div class="highlight"><i class="fa-solid fa-brain"></i><div><b>AI & Data Interest</b><span>Machine learning, deep learning, model evaluation, SHAP, LIME and analytics.</span></div></div>
-            <div class="highlight"><i class="fa-solid fa-bullseye"></i><div><b>Career Goal</b><span>Graduate or junior software developer role with continuous project-based learning.</span></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <div class="section-head reveal"><small>Skills</small><h2>Technical toolkit</h2><p>Skills developed through university coursework, personal projects and portfolio development.</p></div>
-        <div class="skills-grid">
-          <div class="skill glass reveal"><i class="fa-solid fa-globe"></i><h3>Web Development</h3><p>HTML, CSS, JavaScript, responsive design and animated user interfaces.</p><div class="bar"><span style="--w:90%"></span></div></div>
-          <div class="skill glass reveal"><i class="fa-solid fa-terminal"></i><h3>Programming</h3><p>Python, C#, Java, Kotlin, OOP concepts and problem solving.</p><div class="bar"><span style="--w:82%"></span></div></div>
-          <div class="skill glass reveal"><i class="fa-solid fa-database"></i><h3>Database</h3><p>SQL, MySQL, data storage, database design and data handling.</p><div class="bar"><span style="--w:76%"></span></div></div>
-          <div class="skill glass reveal"><i class="fa-solid fa-chart-line"></i><h3>AI & Analytics</h3><p>Scikit-learn, Pandas, NumPy, SHAP, LIME and evaluation metrics.</p><div class="bar"><span style="--w:78%"></span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-head reveal"><small>Featured Projects</small><h2>Work that shows real capability</h2><p>Academic and development projects with technologies, outcomes and GitHub links.</p></div>
-        <div class="projects-grid">
-          <article class="project glass reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-building-columns"></i></div><h3>AI Loan Approval System with XAI</h3></div><span class="status">Completed</span></div><p>Machine learning project predicting loan approval decisions using Logistic Regression and Random Forest, with explainability through SHAP and LIME.</p><div class="tags"><span>Python</span><span>Random Forest</span><span>SHAP</span><span>LIME</span><span>Data Analytics</span></div><div class="project-actions"><a class="mini-btn" href="https://github.com/Nalina-UT/xai-loan-approval-project" target="_blank">GitHub</a><a class="mini-btn" href="https://github.com/Nalina-UT/xai-loan-approval-project" target="_blank">View Details</a></div></article>
-          <article class="project glass reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-eye"></i></div><h3>Deep Learning: MNIST & KITTI</h3></div><span class="status">Completed</span></div><p>Built CNN models for MNIST classification and implemented a KITTI object detection pipeline using Faster R-CNN and computer vision techniques.</p><div class="tags"><span>Python</span><span>CNN</span><span>Faster R-CNN</span><span>Computer Vision</span></div><div class="project-actions"><a class="mini-btn" href="https://github.com/Nalina-UT/deep-learning-mnist-kitti" target="_blank">GitHub</a><a class="mini-btn" href="https://github.com/Nalina-UT/deep-learning-mnist-kitti" target="_blank">View Details</a></div></article>
-          <article class="project glass reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div><h3>C# Pharmacy Management System</h3></div><span class="status">Improving</span></div><p>C#/.NET project for managing products, customers, stock records, sales and business operations with database support.</p><div class="tags"><span>C#</span><span>.NET</span><span>SQL</span><span>Management System</span></div><div class="project-actions"><a class="mini-btn" href="https://github.com/Nalina-UT/C-sharp-Pharmacy-management" target="_blank">GitHub</a><a class="mini-btn" href="https://github.com/Nalina-UT/C-sharp-Pharmacy-management" target="_blank">View Details</a></div></article>
-          <article class="project glass reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-laptop-code"></i></div><h3>Personal Portfolio Website</h3></div><span class="status">Live</span></div><p>Responsive personal portfolio built with modern HTML, CSS and JavaScript animations to present projects, skills and contact details professionally.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span></div><div class="project-actions"><a class="mini-btn" href="https://github.com/Nalina-UT/nalina-portfolio" target="_blank">GitHub</a><a class="mini-btn" href="https://nalina-ut.github.io/nalina-portfolio/" target="_blank">Live Page</a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="roadmap">
-      <div class="container">
-        <div class="section-head reveal"><small>Upcoming Projects</small><h2>Project roadmap</h2><p>Future projects planned to improve full-stack, AI and Android development skills.</p></div>
-        <div class="road-grid">
-          <div class="road glass reveal"><span class="status">Upcoming</span><i class="fa-solid fa-shield-halved"></i><h3>AI Cybersecurity Threat Detection</h3><p>Machine learning project to detect suspicious behaviour and classify potential cyber threats.</p><div class="tags"><span>Python</span><span>ML</span><span>Security</span></div></div>
-          <div class="road glass reveal"><span class="status">Upcoming</span><i class="fa-solid fa-cart-shopping"></i><h3>E-Commerce Web Application</h3><p>Full-stack shopping system with product pages, user accounts, cart, checkout and admin controls.</p><div class="tags"><span>JavaScript</span><span>MySQL</span><span>UI</span></div></div>
-          <div class="road glass reveal"><span class="status">Upcoming</span><i class="fa-brands fa-android"></i><h3>Advanced Android Game Upgrade</h3><p>Game upgrade with better graphics, smooth interactions, score logic, sound and polished UI.</p><div class="tags"><span>Kotlin</span><span>Android</span><span>Game UI</span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="container">
-        <div class="section-head reveal"><small>Education</small><h2>Academic background</h2><p>Software engineering and computer systems learning journey.</p></div>
-        <div class="timeline">
-          <div class="time-card glass reveal"><strong>Current</strong><div><h3>Computer Systems Engineering</h3><p>University of Sunderland</p></div></div>
-          <div class="time-card glass reveal"><strong>Completed</strong><div><h3>Higher National Diploma in Software Engineering</h3><p>Cardiff Metropolitan University / ICBT Campus</p></div></div>
-          <div class="time-card glass reveal"><strong>Focus</strong><div><h3>Web, Software, Android, AI and Data Analytics</h3><p>Continuously improving through coursework, GitHub projects and practical portfolio work.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-head reveal"><small>Contact</small><h2>Let’s work together</h2><p>Open to junior developer, internship, academic project and freelance web opportunities.</p></div>
-        <div class="contact-grid">
-          <div class="contact-box glass reveal">
-            <div class="contact-item"><i class="fa-solid fa-envelope"></i><div><b>Email</b><p><a href="mailto:kawidunimantha872@gmail.com">nalinaudani23@gmail.com</a></p></div></div>
-            <div class="contact-item"><i class="fa-brands fa-github"></i><div><b>GitHub</b><p><a href="https://github.com/Nalina-UT" target="_blank">github.com/Nalina-UT</a></p></div></div>
-            <div class="contact-item"><i class="fa-brands fa-linkedin"></i><div><b>LinkedIn</b><p><a href="#" onclick="alert('Add your LinkedIn profile URL here.');return false;">https://www.linkedin.com/in/nalina-thennakoon-961957341/</a></p></div></div>
-            <div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><b>Location</b><p>United Kingdom</p></div></div>
-          </div>
-          <div class="contact-box glass reveal">
-            <form id="contactForm">
-              <input type="text" id="name" placeholder="Your Name" required>
-              <input type="email" id="email" placeholder="Your Email" required>
-              <textarea id="message" placeholder="Your Message" required></textarea>
-              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
-              <p id="formNote" style="color:var(--muted);font-size:14px"></p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer"><div class="container"><p>© 2026 <b>Nalina Thennakoon</b>. Designed with HTML, CSS and JavaScript.</p></div></footer>
-
-  <script>
-    const preloader=document.querySelector('.preloader');window.addEventListener('load',()=>setTimeout(()=>preloader.classList.add('hide'),450));
-    const words=['professional websites','AI projects','data analytics dashboards','C# software systems','Android app ideas'];
-    const typing=document.getElementById('typingText');let wi=0,ci=0,del=false;
-    function type(){const w=words[wi];typing.textContent=del?w.slice(0,ci--):w.slice(0,ci++);if(!del&&ci>w.length+10)del=true;if(del&&ci<0){del=false;wi=(wi+1)%words.length;ci=0}setTimeout(type,del?38:72)}type();
-    const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
-    const themeBtn=document.getElementById('themeBtn');themeBtn.addEventListener('click',()=>{document.documentElement.classList.toggle('light');themeBtn.innerHTML=document.documentElement.classList.contains('light')?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>'});
-    const reveal=document.querySelectorAll('.reveal');const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:.12});reveal.forEach(el=>io.observe(el));
-    const sections=document.querySelectorAll('section[id]'),links=document.querySelectorAll('.nav-links a');window.addEventListener('scroll',()=>{let current='';sections.forEach(s=>{if(scrollY>=s.offsetTop-160)current=s.id});links.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+current)})});
-    const glow=document.getElementById('cursorGlow');window.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
-    document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('name').value.trim(),em=document.getElementById('email').value.trim(),m=document.getElementById('message').value.trim();const subject=encodeURIComponent('Portfolio Contact Message from '+n);const body=encodeURIComponent('Name: '+n+'\nEmail: '+em+'\n\nMessage:\n'+m);document.getElementById('formNote').textContent='Opening your email app...';location.href='mailto:kawidunimantha872@gmail.com?subject='+subject+'&body='+body});
-  </script>
+<div class="preloader"><div class="loader"></div></div><div class="cursor-glow" id="cursorGlow"></div>
+<nav class="nav"><a href="#home" class="brand"><img src="profile.jpg" alt="Nalina Thennakoon"><span>Nalina Portfolio</span></a><div class="nav-links" id="navLinks"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div><div class="nav-btns"><button class="icon-btn" id="themeBtn" aria-label="Change theme"><i class="fa-solid fa-moon"></i></button><button class="menu-btn" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button></div></nav>
+<main>
+<section class="hero" id="home"><div class="container hero-grid"><div class="hero-content reveal"><div class="badge"><span class="dot"></span>Available for freelance websites, internships and junior roles</div><h1>Hi, I’m <span class="gradient">Nalina Thennakoon</span></h1><div class="typing">I build <span id="typingText"></span></div><p>Computer Systems Engineering student and freelance web developer creating clean, responsive websites, portfolio pages, landing pages, AI projects and data-driven solutions with a professional user experience.</p><div class="btn-row"><a href="#projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i> View Projects</a><a href="#contact" class="btn btn-ghost"><i class="fa-solid fa-paper-plane"></i> Hire Me</a><a href="https://github.com/Nalina-UT" target="_blank" class="btn btn-ghost"><i class="fa-brands fa-github"></i> GitHub</a></div><div class="stats"><div class="stat"><b>10+</b><span>Portfolio & roadmap projects</span></div><div class="stat"><b>8+</b><span>Technical skill areas</span></div><div class="stat"><b>24h</b><span>Fast small website delivery</span></div></div></div><div class="visual reveal"><span class="orb one"></span><span class="orb two"></span><div class="profile-card"><div class="photo-wrap"><img src="profile.jpg" alt="Professional photo of Nalina Thennakoon"><div class="photo-label"><h3>Nalina Thennakoon</h3><p>Software Developer • Web Developer • AI & Data Analytics Learner</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">C#</span><span class="chip">AI</span></div></div></div></div></div></div></section>
+<section id="about"><div class="container"><div class="section-head reveal"><small>About Me</small><h2>Professional, practical and always improving</h2><p>I focus on building real projects that show both technical knowledge and clean presentation.</p></div><div class="about-grid"><div class="about-box glass reveal"><p>My name is <strong>Nalina Thennakoon</strong>. I completed a <strong>Higher National Diploma in Software Engineering</strong> and I am currently studying <strong>Computer Systems Engineering</strong> at the University of Sunderland.</p><p>I enjoy creating modern websites, Android apps, C# software systems and AI/data analytics projects. My goal is to become a confident software developer who can build reliable and user-friendly solutions.</p><p>This portfolio is designed for GitHub, LinkedIn, Upwork and junior developer applications.</p></div><div class="about-box glass reveal"><div class="highlight"><i class="fa-solid fa-code"></i><div><b>Development Focus</b><span>Responsive websites, landing pages, software systems and clean UI design.</span></div></div><div class="highlight"><i class="fa-solid fa-brain"></i><div><b>AI & Data Interest</b><span>Machine learning, deep learning, model evaluation, SHAP, LIME and analytics.</span></div></div><div class="highlight"><i class="fa-solid fa-bullseye"></i><div><b>Career Goal</b><span>Junior software developer role and freelance web development growth.</span></div></div></div></div></div></section>
+<section id="skills"><div class="container"><div class="section-head reveal"><small>Skills</small><h2>Technical toolkit</h2><p>Skills developed through university coursework, personal projects and freelance-style portfolio work.</p></div><div class="skills-grid"><div class="skill glass reveal"><i class="fa-solid fa-globe"></i><h3>Web Development</h3><p>HTML, CSS, JavaScript, responsive design and animated user interfaces.</p><div class="bar"><span style="--w:92%"></span></div></div><div class="skill glass reveal"><i class="fa-solid fa-wand-magic-sparkles"></i><h3>UI/UX Design</h3><p>Modern layouts, glassmorphism, landing pages and brand-focused visuals.</p><div class="bar"><span style="--w:86%"></span></div></div><div class="skill glass reveal"><i class="fa-solid fa-terminal"></i><h3>Programming</h3><p>Python, C#, Java, Kotlin, OOP concepts and problem solving.</p><div class="bar"><span style="--w:82%"></span></div></div><div class="skill glass reveal"><i class="fa-solid fa-chart-line"></i><h3>AI & Analytics</h3><p>Scikit-learn, Pandas, NumPy, SHAP, LIME and evaluation metrics.</p><div class="bar"><span style="--w:78%"></span></div></div></div></div></section>
+<section id="services"><div class="container"><div class="section-head reveal"><small>Freelance Services</small><h2>What I can build for clients</h2><p>Simple, clean and responsive websites for small businesses, portfolios and landing pages.</p></div><div class="services-grid"><div class="service glass reveal"><i class="fa-solid fa-laptop-code"></i><h3>Landing Page Design</h3><p>Modern one-page websites for businesses, products, restaurants and services.</p><span class="price">HTML • CSS • JS</span></div><div class="service glass reveal"><i class="fa-solid fa-mobile-screen"></i><h3>Responsive Website Fixes</h3><p>Mobile-friendly improvements, layout fixes, speed improvements and clean redesigns.</p><span class="price">Mobile First</span></div><div class="service glass reveal"><i class="fa-solid fa-clone"></i><h3>Website Clone & Update</h3><p>Recreate an existing website layout and update content, colours, sections and UI.</p><span class="price">Fast Delivery</span></div></div></div></section>
+<section id="projects"><div class="container"><div class="section-head reveal"><small>Featured Projects</small><h2>Work that shows real capability</h2><p>Academic and web development projects with technologies, outcomes and GitHub links.</p></div><div class="projects-grid"><article class="project glass sweet reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-cake-candles"></i></div><h3>SweetCup Bakery Website</h3></div><span class="status">New Project</span></div><p>A premium responsive bakery website with product filtering, dark mode, animated menu cards, floating WhatsApp button, clean navigation and mobile-friendly UI.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span><span>UI/UX</span></div><div class="project-actions"><a class="mini-btn" href="https://github.com/Nalina-UT/sweetcup-bakery-website" target="_blank">GitHub</a><a class="mini-btn" href="https://nalina-ut.github.io/sweetcup-bakery-website/" target="_blank">Live Demo</a></div></article><article class="project glass reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-building-columns"></i></div><h3>AI Loan Approval System with XAI</h3></div><span class="status">Completed</span></div><p>Machine learning project predicting loan approval decisions using Logistic Regression and Random Forest, with explainability through SHAP and LIME.</p><div class="tags"><span>Python</span><span>Random Forest</span><span>SHAP</span><span>LIME</span><span>Data Analytics</span></div><div class="project-actions"><a class="mini-btn" href="https://github.com/Nalina-UT/xai-loan-approval-project" target="_blank">GitHub</a><a class="mini-btn" href="https://github.com/Nalina-UT/xai-loan-approval-project" target="_blank">View Details</a></div></article><article class="project glass reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-eye"></i></div><h3>Deep Learning: MNIST & KITTI</h3></div><span class="status">Completed</span></div><p>Built CNN models for MNIST classification and implemented a KITTI object detection pipeline using Faster R-CNN and computer vision techniques.</p><div class="tags"><span>Python</span><span>CNN</span><span>Faster R-CNN</span><span>Computer Vision</span></div><div class="project-actions"><a class="mini-btn" href="https://github.com/Nalina-UT/deep-learning-mnist-kitti" target="_blank">GitHub</a><a class="mini-btn" href="https://github.com/Nalina-UT/deep-learning-mnist-kitti" target="_blank">View Details</a></div></article><article class="project glass reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-prescription-bottle-medical"></i></div><h3>C# Pharmacy Management System</h3></div><span class="status">Improving</span></div><p>C#/.NET project for managing products, customers, stock records, sales and business operations with database support.</p><div class="tags"><span>C#</span><span>.NET</span><span>SQL</span><span>Management System</span></div><div class="project-actions"><a class="mini-btn" href="https://github.com/Nalina-UT/C-sharp-Pharmacy-management" target="_blank">GitHub</a><a class="mini-btn" href="https://github.com/Nalina-UT/C-sharp-Pharmacy-management" target="_blank">View Details</a></div></article><article class="project glass reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-laptop-code"></i></div><h3>Personal Portfolio Website</h3></div><span class="status">Live</span></div><p>Responsive personal portfolio built with modern HTML, CSS and JavaScript animations to present projects, skills and contact details professionally.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub Pages</span></div><div class="project-actions"><a class="mini-btn" href="https://github.com/Nalina-UT/nalina-portfolio" target="_blank">GitHub</a><a class="mini-btn" href="https://nalina-ut.github.io/nalina-portfolio/" target="_blank">Live Page</a></div></article><article class="project glass reveal"><div class="project-top"><div><div class="project-icon"><i class="fa-solid fa-cart-shopping"></i></div><h3>E-Commerce Web App</h3></div><span class="status">Upcoming</span></div><p>Planned full-stack shopping system with products, cart, checkout and admin controls to improve full-stack development skills.</p><div class="tags"><span>JavaScript</span><span>MySQL</span><span>UI</span><span>Full Stack</span></div><div class="project-actions"><a class="mini-btn" href="#contact">Discuss Project</a></div></article></div></div></section>
+<section id="education"><div class="container"><div class="section-head reveal"><small>Education</small><h2>Academic background</h2><p>Software engineering and computer systems learning journey.</p></div><div class="timeline"><div class="time-card glass reveal"><strong>Current</strong><div><h3>Computer Systems Engineering</h3><p>University of Sunderland</p></div></div><div class="time-card glass reveal"><strong>Completed</strong><div><h3>Higher National Diploma in Software Engineering</h3><p>Cardiff Metropolitan University / ICBT Campus</p></div></div><div class="time-card glass reveal"><strong>Focus</strong><div><h3>Web, Software, Android, AI and Data Analytics</h3><p>Continuously improving through coursework, GitHub projects and practical portfolio work.</p></div></div></div></div></section>
+<section id="contact"><div class="container"><div class="section-head reveal"><small>Contact</small><h2>Let’s work together</h2><p>Open to junior developer, internship, academic project and freelance web opportunities.</p></div><div class="contact-grid"><div class="contact-box glass reveal"><div class="contact-item"><i class="fa-solid fa-envelope"></i><div><b>Email</b><p><a href="mailto:nalinaudani23@gmail.com">nalinaudani23@gmail.com</a></p></div></div><div class="contact-item"><i class="fa-brands fa-github"></i><div><b>GitHub</b><p><a href="https://github.com/Nalina-UT" target="_blank">github.com/Nalina-UT</a></p></div></div><div class="contact-item"><i class="fa-brands fa-linkedin"></i><div><b>LinkedIn</b><p><a href="https://www.linkedin.com/in/nalina-thennakoon-961957341/" target="_blank">linkedin.com/in/nalina-thennakoon</a></p></div></div><div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><b>Location</b><p>United Kingdom</p></div></div><div class="contact-item"><i class="fa-solid fa-briefcase"></i><div><b>Available For</b><p>Landing pages, website redesigns, portfolio websites and HTML/CSS/JavaScript projects.</p></div></div></div><div class="contact-box glass reveal"><form id="contactForm"><input type="text" id="name" placeholder="Your Name" required><input type="email" id="email" placeholder="Your Email" required><textarea id="message" placeholder="Your Message" required></textarea><button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button><p id="formNote" style="color:var(--muted);font-size:14px"></p></form></div></div></div></section>
+</main><footer class="footer"><div class="container"><p>© 2026 <b>Nalina Thennakoon</b>. Designed with HTML, CSS and JavaScript.</p></div></footer>
+<script>
+const preloader=document.querySelector('.preloader');window.addEventListener('load',()=>setTimeout(()=>preloader.classList.add('hide'),450));
+const words=['wow responsive websites','modern landing pages','AI projects','clean portfolio websites','freelance web designs'];const typing=document.getElementById('typingText');let wi=0,ci=0,del=false;function type(){const w=words[wi];typing.textContent=del?w.slice(0,ci--):w.slice(0,ci++);if(!del&&ci>w.length+8)del=true;if(del&&ci<0){del=false;wi=(wi+1)%words.length;ci=0}setTimeout(type,del?38:72)}type();
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const themeBtn=document.getElementById('themeBtn');themeBtn.addEventListener('click',()=>{document.documentElement.classList.toggle('light');themeBtn.innerHTML=document.documentElement.classList.contains('light')?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>'});
+const reveal=document.querySelectorAll('.reveal');const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})},{threshold:.12});reveal.forEach(el=>io.observe(el));
+const sections=document.querySelectorAll('section[id]'),links=document.querySelectorAll('.nav-links a');window.addEventListener('scroll',()=>{let current='';sections.forEach(s=>{if(scrollY>=s.offsetTop-160)current=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current))});
+const glow=document.getElementById('cursorGlow');window.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('name').value.trim(),em=document.getElementById('email').value.trim(),m=document.getElementById('message').value.trim();const subject=encodeURIComponent('Portfolio Contact Message from '+n);const body=encodeURIComponent('Name: '+n+'\nEmail: '+em+'\n\nMessage:\n'+m);document.getElementById('formNote').textContent='Opening your email app...';location.href='mailto:nalinaudani23@gmail.com?subject='+subject+'&body='+body});
+</script>
 </body>
 </html>
